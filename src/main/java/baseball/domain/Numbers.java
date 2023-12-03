@@ -8,8 +8,8 @@ import static baseball.exception.ErrorCode.INVALID_NUMBER;
 
 public class Numbers {
     public static final int MAX_DIGIT = 3;
+    public static final int NOT_EXISTENCE = 0;
     private final int DUPLICATE_MIN_CONDITION = 2;
-    private final int NOT_EXISTENCE = 0;
 //    private static final Pattern REGEX_PATTERN = Pattern.compile("^\\d{100,999}$");
     private final List<Integer> numbers;
 
