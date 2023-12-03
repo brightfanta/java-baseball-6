@@ -7,6 +7,10 @@ sealed class OutputWriter permits ErrorOutputWriter, GameOutputWriter {
     public OutputWriter() {
     }
 
+    public static void print(Object object) {
+        System.out.print(object);
+    }
+
     public static void println(Object object) {
         System.out.println(object);
     }
@@ -16,6 +20,6 @@ sealed class OutputWriter permits ErrorOutputWriter, GameOutputWriter {
     }
 
     public static void printMessageResponse(ResponseMessage responseMessage) {
-        println(responseMessage.getMessage());
+        print(responseMessage.getMessage());
     }
 }
