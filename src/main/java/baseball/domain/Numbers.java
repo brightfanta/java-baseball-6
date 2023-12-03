@@ -3,25 +3,24 @@ package baseball.domain;
 import baseball.utility.Parser;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static baseball.exception.ErrorCode.INVALID_NUMBER;
 
 public class Numbers {
-    private final int MAX_DIGIT = 3;
+    public static final int MAX_DIGIT = 3;
     private final int DUPLICATE_MIN_CONDITION = 2;
     private final int NOT_EXISTENCE = 0;
-    private static final Pattern REGEX_PATTERN = Pattern.compile("^\\d{100,999}$");
-    private final int numbers;
+//    private static final Pattern REGEX_PATTERN = Pattern.compile("^\\d{100,999}$");
+    private final List<Integer> numbers;
 
     //== Constructor ==//
     private Numbers(String numbers) {
-        INVALID_NUMBER.validate(() -> isInvalidInputType(numbers));
+//        INVALID_NUMBER.validate(() -> isOnlyDigit(numbers));
+        int number = Parser.parseNumberInput(numbers);
         INVALID_NUMBER.validate(() -> hasDuplicateNumber(numbers));
         INVALID_NUMBER.validate(() -> isExceedMaximumDigit(numbers));
 
-        this.numbers = Parser.parseNumberInput(numbers);
+        this.numbers = Parser.parseNumbers(number);
     }
 
     //== Static Factory Method ==//
@@ -43,12 +42,16 @@ public class Numbers {
         return numberInput.length() > MAX_DIGIT;
     }
 
-    private boolean isInvalidInputType(String inputs) {
-        return matchWithRegex(inputs);
-    }
+//    private boolean isOnlyDigit(String inputs) {
+//        return !matchWithRegex(inputs);
+//    }
+//
+//    private boolean matchWithRegex(String input) {
+//        Matcher matcher = REGEX_PATTERN.matcher(input);
+//        return !matcher.matches();
+//    }
 
-    private boolean matchWithRegex(String input) {
-        Matcher matcher = REGEX_PATTERN.matcher(input);
-        return !matcher.matches();
+    public List<Integer> getNumbers() {
+        return numbers;
     }
 }
