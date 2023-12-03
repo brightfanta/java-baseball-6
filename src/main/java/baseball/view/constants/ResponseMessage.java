@@ -14,7 +14,7 @@ public enum ResponseMessage {
 
     //== RESPONSE MESSAGE ==//
 //    RESPONSE_NONEXISTENCE_RESPONSE("없음"),
-    RESPONSE_FINISH_GAME("%d개의 개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    ;
 
     private final String message;
 
