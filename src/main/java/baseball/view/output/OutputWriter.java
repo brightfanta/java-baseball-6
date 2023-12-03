@@ -2,7 +2,7 @@ package baseball.view.output;
 
 import baseball.view.constants.ResponseMessage;
 
-sealed class OutputWriter permits ErrorOutputWriter{
+sealed class OutputWriter permits ErrorOutputWriter, GameOutputWriter {
 
     public OutputWriter() {
     }
