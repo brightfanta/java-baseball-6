@@ -9,7 +9,7 @@ public class ExceptionHandler {
     public ExceptionHandler() {
     }
 
-    public static <T> T retryOnBusinessException(Supplier<T> supplier) {
+    public static <T> T retryWhenBusinessException(Supplier<T> supplier) {
         while (true) {
             try {
                 return supplier.get();
