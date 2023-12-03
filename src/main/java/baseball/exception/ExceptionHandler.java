@@ -2,7 +2,6 @@ package baseball.exception;
 
 import baseball.view.output.ErrorOutputWriter;
 
-import java.time.DateTimeException;
 import java.util.function.Supplier;
 
 public class ExceptionHandler {
@@ -23,7 +22,7 @@ public class ExceptionHandler {
     public static <T> T tryOnParseIntException(Supplier<T> supplier) {
         try {
             return supplier.get();
-        } catch (DateTimeException | NumberFormatException exception) {
+        } catch (NumberFormatException exception) {
             throw BusinessException.of(ErrorCode.INVALID_NUMBER, exception);
         }
     }
