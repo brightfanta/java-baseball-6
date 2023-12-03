@@ -47,11 +47,9 @@ public class Calculator {
     public Integer calculateSameNumberCount() {
         List<Integer> playerNumbers = numbers.getNumbers();
         int sameNumberCount = 0;
-        for (int i = 0; i < MAX_DIGIT; i++) {
-            sameNumberCount += playerNumbers.stream()
-                    .filter(computerNumbers::contains)
-                    .count();
-        }
+        sameNumberCount += playerNumbers.stream()
+                .filter(computerNumbers::contains)
+                .count();
         return sameNumberCount;
     }
 }
