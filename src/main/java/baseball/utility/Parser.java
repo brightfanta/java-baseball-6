@@ -1,12 +1,9 @@
 package baseball.utility;
 
-import baseball.exception.BusinessException;
 import baseball.exception.ExceptionHandler;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static baseball.exception.ErrorCode.INVALID_NUMBER;
 
 public class Parser {
     private static final Pattern REGEX_PATTERN = Pattern.compile("^\\d{100,999}$");
